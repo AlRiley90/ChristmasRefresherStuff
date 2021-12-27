@@ -89,7 +89,9 @@ console.log(calculateTip(0.15, 33.42).toFixed(2)); // returns 5.013
  * then display the dollar amount they should tip
  */
 
-
+var bill = prompt("How much was your bill?");
+var tipAmount = prompt("What percentage would you like to leave for the tip?")
+alert("If your bill is $" + bill +" and you want to leave " + tipAmount+ "% for the tip. You should leave $" + calculateTip(tipAmount/100, bill).toFixed(2) + " for the tip.")
 
 /**
  * TODO:
@@ -105,3 +107,10 @@ console.log(calculateTip(0.15, 33.42).toFixed(2)); // returns 5.013
  *
  * > applyDiscount(45.99, 0.12) // 40.4712
  */
+
+function applyDiscount(price, discountPercentage){
+    var discountAmount = price * discountPercentage;
+    return price - discountAmount;
+}
+
+console.log(applyDiscount(45.99, 0.12).toFixed(2));
