@@ -22,17 +22,17 @@
  * console.logging the function's return value
  */
 
-// function analyzeColor(colorName){
-//     if(colorName === 'green'){
-//         return "green is the color of the grass"
-//     } else if(colorName === 'blue'){
-//         return "blue is the color of the sky"
-//     } else if(colorName === 'red'){
-//         return "red is the color of strawberries"
-//     }else{
-//         return "I don't know anything about that color"
-//     }
-// }
+function analyzeColor(colorName){
+    if(colorName === 'green'){
+        return "green is the color of the grass"
+    } else if(colorName === 'blue'){
+        return "blue is the color of the sky"
+    } else if(colorName === 'red'){
+        return "red is the color of strawberries"
+    }else{
+        return "I don't know anything about that color"
+    }
+}
 
 // console.log(analyzeColor('green'));
 // console.log(analyzeColor('orange'));
@@ -83,6 +83,9 @@ switch(randomColor){
  * user to your `analyzeColor` function. Alert the return value from your
  * function to show it to the user.
  */
+var userColor = prompt("Enter a color of choosing");
+
+console.log(analyzeColor(userColor));
 
 /* ########################################################################## */
 
@@ -106,6 +109,36 @@ switch(randomColor){
  * return value.
  */
 
+function calculateTotal(luckyNumber, totalAmount){
+    switch(luckyNumber){
+        case "0":
+            alert("You receive no discount. You must pay the full price of" + totalAmount);
+            break;
+        case "1":
+            alert("You receive a 10% discount. Your new total is " + (totalAmount - (totalAmount * .1)));
+            break;
+        case "2":
+            alert("You receive a 25% discount. Your new total is " + (totalAmount - (totalAmount * .25)));
+            break;
+        case "3":
+            alert("You receive a 35% discount. Your new total is " + (totalAmount - (totalAmount * .35)));
+            break;
+        case "4":
+            alert("You receive a 50% discount. Your new total is " + (totalAmount - (totalAmount * .50)));
+            break;
+        case "5":
+            alert("Congratulations! You win the grand prize of free items.")
+            break;
+        default:
+            alert("That number does not qualify.");
+            break;
+    }
+}
+
+// console.log(calculateTotal(5, 100));
+// console.log(calculateTotal(4, 100));
+// console.log(calculateTotal(0, 100));
+
 /**
  * TODO:
  * Uncomment the line below to generate a random number between 0 and 5.
@@ -115,8 +148,9 @@ switch(randomColor){
  * price before the discount was, and what their price after the discount is.
  */
 // Generate a random number between 0 and 6
-// var luckyNumber = Math.floor(Math.random() * 6);
-
+var luckyNumber = Math.floor(Math.random() * 6);
+var userTotal = prompt("Enter your total")
+calculateTotal(luckyNumber, userTotal);
 /**
  * TODO:
  * Write some JavaScript that uses a `confirm` dialog to ask the user if they
