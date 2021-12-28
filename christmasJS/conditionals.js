@@ -110,28 +110,20 @@ console.log(analyzeColor(userColor));
  */
 
 function calculateTotal(luckyNumber, totalAmount){
-    switch(luckyNumber){
-        case "0":
-            alert("You receive no discount. You must pay the full price of" + totalAmount);
-            break;
-        case "1":
-            alert("You receive a 10% discount. Your new total is " + (totalAmount - (totalAmount * .1)));
-            break;
-        case "2":
-            alert("You receive a 25% discount. Your new total is " + (totalAmount - (totalAmount * .25)));
-            break;
-        case "3":
-            alert("You receive a 35% discount. Your new total is " + (totalAmount - (totalAmount * .35)));
-            break;
-        case "4":
-            alert("You receive a 50% discount. Your new total is " + (totalAmount - (totalAmount * .50)));
-            break;
-        case "5":
-            alert("Congratulations! You win the grand prize of free items.")
-            break;
-        default:
+    if(luckyNumber === 0) {
+        alert("You receive no discount. You must pay the full price of $" + totalAmount.toFixed(2));
+    } else if(luckyNumber === 1) {
+        alert("You receive a 10% discount. Your new total is $" + (totalAmount - (totalAmount * .1)).toFixed(2));
+    }else if(luckyNumber === 2) {
+        alert("You receive a 25% discount. Your new total is $" + (totalAmount - (totalAmount * .25)).toFixed(2));
+    }else if(luckyNumber === 3) {
+        alert("You receive a 35% discount. Your new total is $" + (totalAmount - (totalAmount * .35)).toFixed(2));
+    }else if(luckyNumber === 4) {
+        alert("You receive a 50% discount. Your new total is $" + (totalAmount - (totalAmount * .50)).toFixed(2));
+    }else if(luckyNumber === 5) {
+        alert("Congratulations! You win the grand prize of free items.")
+    }else{
             alert("That number does not qualify.");
-            break;
     }
 }
 
